@@ -1,5 +1,8 @@
 
 # Overview
+
+THIS is a fork of STS-3D's fusion parametric components. It has been modified to separate file based on different HAM radio tag colors.
+
  Fusion 360 Add-In to parametricly modify components with spreadsheet input. 
  This is a VERY early beta version, I have many improvements planned, both to the Add-In functinality and code quality.
  Please let me know about any bugs/ sugested features.

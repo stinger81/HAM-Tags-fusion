@@ -35,7 +35,6 @@ OUTPUT_TABLE_JSON = {}
 CONFIG = {}
 
 
-
 # Resource location for command icons, here we assume a sub folder in this directory named "resources".
 ICON_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources', '')
 
@@ -146,8 +145,13 @@ def start():
 def export_to_stl(exportMgr, comp, file_name):
     # directory where stl files are saved
     stl_base_dir = CONFIG['save_dir']
+    print(stl_base_dir)
+    sub_dir = file_name.split('_')[2]
 
-    save_path = os.path.join(stl_base_dir, f'{file_name}.stl')
+    if not os.path.exists(os.path.join(stl_base_dir,sub_dir)):
+        os.makedirs(os.path.join(stl_base_dir,sub_dir))
+
+    save_path = os.path.join(stl_base_dir,sub_dir,f'{file_name}.stl')
     # export the root compoennt
 
     stlExportOptions = exportMgr.createSTLExportOptions(comp, save_path)
